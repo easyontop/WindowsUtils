@@ -136,7 +136,7 @@ namespace Windows_Utilities
             FadeOut2(t_m);
             await Task.Delay(1000);
             new Updater().Show();
-            Hide();
+            Close();
         }
 
         private void ExitB_Click(object sender, RoutedEventArgs e) {
