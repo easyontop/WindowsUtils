@@ -1,0 +1,50 @@
+﻿<Window x:Class="Windows_Utilities.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Windows_Utilities"
+        mc:Ignorable="d"
+        Title="Windows Utils" Height="448" Width="720"
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        ResizeMode="NoResize" Loaded="WinLoaded32"
+        Background="{x:Null}"
+        AllowsTransparency="True"
+        >
+    <Grid Opacity="1" x:Name="t_m">
+        <Border Background="#FF0F0F0F" CornerRadius="0">
+            <Grid ClipToBounds="True">
+                <Border x:Name="SpinningBorder" Margin="0,0,0,-50" CornerRadius="5" VerticalAlignment="Bottom" Height="100">
+                    <Border.Effect>
+                        <BlurEffect Radius="100"/>
+                    </Border.Effect>
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="1,1" StartPoint="0,1">
+                            <LinearGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                    <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                    <RotateTransform x:Name="rgbRotation" CenterY="0.5" CenterX="0.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </LinearGradientBrush.RelativeTransform>
+                            <GradientStop x:Name="BSG1" Color="#4568DC" Offset="0"/>
+                            <GradientStop x:Name="BSG2" Color="#B06AB3" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
+            </Grid>
+        </Border>
+        <Grid x:Name="TopBar" Height="35" VerticalAlignment="Top">
+            <Image HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="25" Source="Res/DefaultAppLogo.png" Margin="10,10,0,0" RenderOptions.BitmapScalingMode="HighQuality"/>
+            <Label Content="Windows Utils" HorizontalAlignment="Left" Margin="41,10,0,0" VerticalAlignment="Bottom" Height="25" FontFamily="/Res/AtkinsonHyperlegible-Bold.ttf" Foreground="#DDFFFFFF" FontSize="13"/>
+            <Button x:Name="ExitB" Content="&#xE8BB;" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="White" Foreground="White" FontFamily="Segoe MDL2 Assets" FontSize="10" Height="33" Padding="0" BorderThickness="0,0,0,0" HorizontalAlignment="Right" Width="32" Margin="0,2,2,0" Click="ExitB_Click"/>
+            <Button x:Name="MinimizeB" Content="&#xEF2D;" Margin="0,2,34,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="White" Foreground="White" FontFamily="Segoe MDL2 Assets" FontSize="10" Height="33" Padding="0" BorderThickness="0,0,0,0" HorizontalAlignment="Right" Width="32" Click="HideUpdater32"/>
+        </Grid>
+        <Grid x:Name="Main" Margin="0, 40, 0, 0">
+            <ProgressBar Height="5" Width="720" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="Transparent" Foreground="LightCyan" x:Name="t_main" Value="100" Margin="-740 0 0 0"/>
+            <Label Content="Please Wait..." HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,50" FontFamily="/Res/AtkinsonHyperlegible-Bold.ttf" Foreground="#DDFFFFFF" FontSize="20" FontWeight="Bold" Padding="0"/>
+            <Label Content="Application is being initalized..." HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,20" FontFamily="/Res/AtkinsonHyperlegible-Bold.ttf" Foreground="#DDFFFFFF" FontSize="16" FontWeight="Thin" Padding="0"/>
+        </Grid>
+    </Grid>
+</Window>

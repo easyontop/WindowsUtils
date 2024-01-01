@@ -1,0 +1,7 @@
+.vs
+bin
+obj
+Res
+app.manifest
+Windows Utilities.csproj
+Windows Utilities.sln
